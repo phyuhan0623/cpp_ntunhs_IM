@@ -1,30 +1,49 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
-int main(void) {
-    // 宣告變數以儲存使用者輸入
-    string className;
-    string studentID;
-    string studentName;
-
-    // 請使用者輸入班級
-    cout << "請輸入班級: ";
-    getline(cin, className);
-
-    // 請使用者輸入學號
-    cout << "請輸入學號: ";
-    getline(cin, studentID);
-
-    // 請使用者輸入姓名
-    cout << "請輸入姓名: ";
-    getline(cin, studentName);
-
-    // 列印輸入的資訊
-    cout<<"\n輸入的資料如下:" <<endl;
-    cout << "班級: " << className << endl;
-    cout << "學號: " << studentID << endl;
-    cout << "姓名: " << studentName << endl;
-
+int main() {
+    char fever, cough, fatigue, hypertension, dryMouth, nightSweats;
+    cout << "歡迎使用醫療診斷系統，請依序回答問題(y/n)" <<endl;
+    cout << "請問您最近是否發燒? =>";
+    cin >>fever;
+    if(fever == 'y'){
+        cout << "請問您最近是否咳嗽? => ";
+        cin >>cough;
+        if(cough =='y') {
+             cout << "請問您最近是否疲憊? => ";
+        cin >>fatigue;
+        if(fatigue =='y') {
+             cout << "你可能感冒!!" << endl;
+        }else{
+            cout << "請問您最近是否血壓升高? => ";
+        cin >> hypertension;
+        if(hypertension == 'y'){
+            cout << "請問您最近是否口乾? => ";
+            cin >>dryMouth;
+            if(dryMouth =='y') {
+             cout << "你可能肝病!!" << endl;
+        }else{
+            cout << "其他系統問題" << endl;
+        }
+        }else{
+            cout << "請問您最近是否盜汗? => ";
+            cin >>nightSweats;
+            if(nightSweats =='y') {
+             cout << "你可能肺病!!" << endl;
+        }else{
+            cout << "其他系統問題" << endl;
+        }
+            
+        }
+        
+        }
+        
+            
+        }else{
+            cout << "您的壯況正常" << endl;
+        }
+    }else{
+            cout << "您的壯況正常" << endl;
+    }
     return 0;
 }
